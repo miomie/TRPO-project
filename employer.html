@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кабинет работодателя — Карьера</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"
+        ><img src="images/main logo.svg" alt="Карьера"
+      /></a>
+      <nav>
+        <a href="vacancies.html">Вакансии</a
+        ><a href="index.html#about">О сервисе</a>
+      </nav>
+      <div class="header-actions" id="headerActions">
+        <a class="btn btn-light" href="auth.html">Войти</a
+        ><a class="btn btn-outline-light" href="auth.html?mode=register"
+          >Регистрация</a
+        >
+      </div>
+    </header>
+    <main class="page-shell">
+      <section class="dashboard-top">
+        <div>
+          <span class="eyebrow">ЛИЧНЫЙ КАБИНЕТ</span>
+          <h1>Кабинет работодателя</h1>
+          <p>Публикуйте вакансии и управляйте откликами кандидатов.</p>
+        </div>
+        <button class="btn btn-primary" id="logoutBtn">Выйти</button>
+      </section>
+      <div class="dashboard-grid">
+        <aside class="sidebar panel">
+          <div class="user-mini" id="employerIdentity"></div>
+          <a class="side-link active" href="#myVacancies">Мои вакансии</a
+          ><a class="side-link" href="#incoming">Полученные отклики</a
+          ><a class="side-link" href="#resumeBase">База резюме</a>
+        </aside>
+        <div class="dashboard-content">
+          <section class="panel section-panel" id="myVacancies">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow">УПРАВЛЕНИЕ</span>
+                <h2>Мои вакансии</h2>
+              </div>
+              <button class="btn btn-primary" id="newVacancyBtn">
+                + Добавить вакансию
+              </button>
+            </div>
+            <form id="vacancyForm" class="form-grid" hidden>
+              <input type="hidden" name="id" /><label
+                >Название вакансии<input name="title" required /></label
+              ><label
+                >Отдел<input
+                  name="department"
+                  placeholder="Отдел разработки" /></label
+              ><label>Город<input name="city" required /></label
+              ><label
+                >Зарплата<input
+                  name="salary"
+                  placeholder="От 2500 BYN" /></label
+              ><label
+                >Тип занятости<select name="employment">
+                  <option>Полная занятость</option>
+                  <option>Частичная занятость</option>
+                  <option>Стажировка</option>
+                  <option>Удалённо</option>
+                </select></label
+              ><label
+                >Требуемый опыт (лет)<input
+                  name="experience"
+                  type="number"
+                  min="0"
+                  value="0" /></label
+              ><label class="full"
+                >Навыки (через запятую)<input name="skills" /></label
+              ><label class="full"
+                >Описание<textarea
+                  name="description"
+                  rows="4"
+                  required
+                ></textarea>
+              </label>
+              <div class="form-actions full">
+                <button class="btn btn-primary">Сохранить вакансию</button
+                ><button
+                  class="btn btn-soft"
+                  type="button"
+                  id="cancelVacancyBtn"
+                >
+                  Отмена
+                </button>
+              </div>
+            </form>
+            <div id="employerVacancies" class="stack-list"></div>
+          </section>
+          <section class="panel section-panel" id="incoming">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow">КАНДИДАТЫ</span>
+                <h2>Полученные отклики</h2>
+              </div>
+            </div>
+            <div class="filter-row">
+              <input
+                id="applicationQuery"
+                placeholder="Поиск по имени, должности, навыкам"
+              /><select id="applicationStage">
+                <option value="">Все этапы</option>
+                <option>Новый</option>
+                <option>Первичный отбор</option>
+                <option>Интервью</option>
+                <option>Тестовое задание</option>
+                <option>Предложение</option>
+                <option>Отказ</option>
+                <option>Принят</option></select
+              ><select id="applicationVacancy">
+                <option value="">Все вакансии</option>
+              </select>
+            </div>
+            <div id="employerApplications" class="stack-list"></div>
+          </section>
+          <section class="panel section-panel" id="resumeBase">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow">ПОИСК СПЕЦИАЛИСТОВ</span>
+                <h2>База резюме</h2>
+              </div>
+            </div>
+            <div class="filter-row">
+              <input id="resumeQuery" placeholder="Должность или навык" /><input
+                id="resumeCity"
+                placeholder="Город"
+              /><select id="resumeExperience">
+                <option value="">Любой опыт</option>
+                <option value="0">Без опыта</option>
+                <option value="1">От 1 года</option>
+                <option value="3">От 3 лет</option>
+              </select>
+            </div>
+            <div id="resumeBaseList" class="stack-list"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div>
+        <strong>Карьера</strong>
+        <p>Платформа для поиска работы и сотрудников</p>
+      </div>
+      <div>
+        <a href="vacancies.html">Вакансии</a
+        ><a href="auth.html?mode=register">Создать аккаунт</a>
+      </div>
+      <small>Учебный проект · 2026</small>
+    </footer>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

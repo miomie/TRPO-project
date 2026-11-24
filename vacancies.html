@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вакансии — Карьера</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"
+        ><img src="images/main logo.svg" alt="Карьера"
+      /></a>
+      <nav>
+        <a href="vacancies.html">Вакансии</a
+        ><a href="index.html#about">О сервисе</a>
+      </nav>
+      <div class="header-actions" id="headerActions">
+        <a class="btn btn-light" href="auth.html">Войти</a
+        ><a class="btn btn-outline-light" href="auth.html?mode=register"
+          >Регистрация</a
+        >
+      </div>
+    </header>
+    <main class="page-shell">
+      <section class="page-heading">
+        <div>
+          <span class="eyebrow">КАТАЛОГ</span>
+          <h1>Найдите подходящую вакансию</h1>
+          <p>
+            Используйте фильтры, чтобы быстрее найти интересное предложение.
+          </p>
+        </div>
+      </section>
+      <section class="catalog-layout">
+        <aside class="filters panel">
+          <div class="filter-title">
+            <h3>Фильтры</h3>
+            <button type="button" class="text-link" id="resetVacancyFilters">
+              Сбросить
+            </button>
+          </div>
+          <label
+            >Поиск<input
+              id="vacancyQuery"
+              placeholder="Должность, компания, навык" /></label
+          ><label
+            >Город<select id="vacancyCity">
+              <option value="">Все города</option>
+            </select></label
+          ><label
+            >Тип занятости<select id="vacancyEmployment">
+              <option value="">Любой</option>
+              <option>Полная занятость</option>
+              <option>Частичная занятость</option>
+              <option>Стажировка</option>
+              <option>Удалённо</option>
+            </select></label
+          ><label
+            >Опыт работы<select id="vacancyExperience">
+              <option value="">Любой</option>
+              <option value="0">Без опыта</option>
+              <option value="1">От 1 года</option>
+              <option value="2">От 2 лет</option>
+              <option value="3">От 3 лет</option>
+            </select></label
+          >
+        </aside>
+        <div>
+          <div class="results-bar">
+            <span id="vacancyCount">Вакансии</span
+            ><select id="vacancySort" aria-label="Сортировка">
+              <option value="new">Сначала новые</option>
+              <option value="salary">Сначала с высокой зарплатой</option>
+            </select>
+          </div>
+          <div id="vacancyList" class="stack-list"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div>
+        <strong>Карьера</strong>
+        <p>Платформа для поиска работы и сотрудников</p>
+      </div>
+      <div>
+        <a href="vacancies.html">Вакансии</a
+        ><a href="auth.html?mode=register">Создать аккаунт</a>
+      </div>
+      <small>Учебный проект · 2026</small>
+    </footer>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

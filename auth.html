@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вход и регистрация — Карьера</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"
+        ><img src="images/main logo.svg" alt="Карьера"
+      /></a>
+      <nav>
+        <a href="vacancies.html">Вакансии</a
+        ><a href="index.html#about">О сервисе</a>
+      </nav>
+      <div class="header-actions" id="headerActions">
+        <a class="btn btn-light" href="auth.html">Войти</a
+        ><a class="btn btn-outline-light" href="auth.html?mode=register"
+          >Регистрация</a
+        >
+      </div>
+    </header>
+    <main class="page-shell">
+      <section class="auth-wrap">
+        <div class="auth-aside">
+          <span class="eyebrow">ДОБРО ПОЖАЛОВАТЬ</span>
+          <h1>Следующий шаг<br />в вашей карьере.</h1>
+          <p>
+            Создайте аккаунт, чтобы откликаться на вакансии или находить
+            подходящих специалистов.
+          </p>
+          <img src="images/hands.svg" alt="" />
+        </div>
+        <div class="auth-card">
+          <div class="auth-tabs">
+            <button class="tab active" data-auth-tab="login">Вход</button
+            ><button class="tab" data-auth-tab="register">Регистрация</button>
+          </div>
+          <form id="authForm">
+            <h2 id="authTitle">Войти в аккаунт</h2>
+            <div id="registerFields" hidden>
+              <label
+                >Ваше имя<input
+                  name="fullName"
+                  autocomplete="name"
+                  placeholder="Иван Иванов"
+                  minlength="2" /></label
+              ><label
+                >Телефон<input
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="+375 (__) ___-__-__"
+              /></label>
+              <fieldset>
+                <legend>Выберите, что вы ищете</legend>
+                <label class="role-option"
+                  ><input
+                    type="radio"
+                    name="role"
+                    value="applicant"
+                    checked
+                  /><span
+                    ><b>Я ищу работу</b
+                    ><small>Хочу найти вакансию и отправить резюме</small></span
+                  ></label
+                ><label class="role-option"
+                  ><input type="radio" name="role" value="recruiter" /><span
+                    ><b>Я ищу работников</b
+                    ><small
+                      >Хочу публиковать вакансии и выбирать кандидатов</small
+                    ></span
+                  ></label
+                >
+              </fieldset>
+              <label id="companyField" hidden
+                >Название компании<input
+                  name="company"
+                  placeholder="Например, ООО «Компания»"
+              /></label>
+            </div>
+            <label
+              >Email<input
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                placeholder="name@example.com" /></label
+            ><label
+              >Пароль<input
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                minlength="6"
+                placeholder="Не менее 6 символов" /></label
+            ><button class="btn btn-primary btn-wide" id="authSubmit">
+              Войти
+            </button>
+            <p class="form-note" id="authNote">
+              Демо-доступ: hr@gmail.com / demo123 или dev@mail.ru / demo123
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div>
+        <strong>Карьера</strong>
+        <p>Платформа для поиска работы и сотрудников</p>
+      </div>
+      <div>
+        <a href="vacancies.html">Вакансии</a
+        ><a href="auth.html?mode=register">Создать аккаунт</a>
+      </div>
+      <small>Учебный проект · 2026</small>
+    </footer>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

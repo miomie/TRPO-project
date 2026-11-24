@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная — Карьера</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"
+        ><img src="images/main logo.svg" alt="Карьера"
+      /></a>
+      <nav>
+        <a href="vacancies.html">Вакансии</a
+        ><a href="index.html#about">О сервисе</a>
+      </nav>
+      <div class="header-actions" id="headerActions">
+        <a class="btn btn-light" href="auth.html">Войти</a
+        ><a class="btn btn-outline-light" href="auth.html?mode=register"
+          >Регистрация</a
+        >
+      </div>
+    </header>
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">РАБОТА И КАРЬЕРА</span>
+          <h1>Найдите работу.<br /><em>Найдите своих людей.</em></h1>
+          <p>
+            Единое пространство для соискателей и работодателей. Удобный поиск,
+            понятные отклики и управление подбором.
+          </p>
+          <form class="hero-search" id="homeSearch">
+            <input name="q" placeholder="Должность или ключевой навык" /><input
+              name="city"
+              placeholder="Город"
+            /><button class="btn btn-primary">Найти вакансии</button>
+          </form>
+          <div class="hero-links">
+            <a
+              class="btn btn-primary"
+              href="auth.html?mode=register&role=applicant"
+              >Ищу работу</a
+            ><a
+              class="btn btn-soft"
+              href="auth.html?mode=register&role=recruiter"
+              >Ищу сотрудников</a
+            >
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="images/banner.png" alt="Команда и карьера" />
+        </div>
+      </section>
+      <section class="stats">
+        <div><b>2</b><span>демонстрационные вакансии</span></div>
+        <div><b>2</b><span>пользовательские роли</span></div>
+        <div><b>24/7</b><span>доступ к платформе</span></div>
+      </section>
+      <section class="section" id="about">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">ВОЗМОЖНОСТИ</span>
+            <h2>Всё для эффективного найма</h2>
+          </div>
+          <a href="vacancies.html" class="text-link">Все вакансии →</a>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">⌕</div>
+            <h3>Умный поиск</h3>
+            <p>Ищите по названию должности, городу, навыкам и уровню опыта.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">▤</div>
+            <h3>Личный кабинет</h3>
+            <p>Резюме, вакансии и отклики собраны в одном месте.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">↗</div>
+            <h3>Контроль процесса</h3>
+            <p>
+              Отслеживайте этапы рассмотрения откликов и обновляйте статусы.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">АКТУАЛЬНОЕ</span>
+            <h2>Свежие вакансии</h2>
+          </div>
+          <a href="vacancies.html" class="text-link">Открыть каталог →</a>
+        </div>
+        <div id="homeVacancies" class="vacancy-grid"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div>
+        <strong>Карьера</strong>
+        <p>Платформа для поиска работы и сотрудников</p>
+      </div>
+      <div>
+        <a href="vacancies.html">Вакансии</a
+        ><a href="auth.html?mode=register">Создать аккаунт</a>
+      </div>
+      <small>Учебный проект · 2026</small>
+    </footer>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
